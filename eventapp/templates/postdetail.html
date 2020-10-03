@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVENT</title>
+</head>
+  
+<body>
+    <div class="writehead">
+          <div class= main_button>
+            <a href="{% url 'create' %}" >upload</a>
+            <a href="{% url 'home' %}">go to home</a>
+            <a href="{% url 'index' %}">go to event</a>
+          </div>
+    <div class="head_write">
+      <p>다른 사람들이 올린 인증샷을 확인할 수 있습니다! <br>
+        다양한 이들이 어떻게 L.POINT를 사용하고 있는지 확인해보세요!</p>
+    </div>
+    <hr>     
+    <main>
+        <h3>제목: {{ post.title }}</h3>
+        {% if post.photo %}
+        <img src="{{ post.photo.url }}" height="300px">
+        {% endif %}
+        <h6>{{ post.pub_date }}</h6>
+        <!-- 로그인시 author 자동으로 나오게 수정예정 -->
+        <h4>{{ post.author }}</h4>         
+        <p>{{ post.body }}</p>
+        </form>
+        <a href="{% url 'update' post.id%}" class="btn2 btn-outline-danger">수정</a>
+        <a href="{% url 'delete' post.id%}" class="btn2 btn-outline-danger">삭제</a>
+        <hr>
+    </div>   
+    </main>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT_UPDATE</title>
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            
+            <div class="py-5 text-center">
+            
+                <h2>인증이벤트 참여하기</h2>
+                <p class="lead">등록한 정보를 자유롭게 수정해보세요.</p>
+            </div>
+
+        <div class=input_form>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <table>
+                {{form.as_table}}
+                <hr>
+                <div class="blockgroup">
+                    <input type="submit" class="btn btn-info" value="수정하기">
+                    <input type="reset" class="btn btn-info" value="다시쓰기">
+                    <input type="button" class="btn btn-info" value="이전으로" onclick="history.back(1)">
+                </div>
+                </table>
+            </form>
+        </div>
+     </div>
+    </div>
+</body>
+</html>    

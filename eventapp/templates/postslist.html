@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT_LIST</title>
+</head>
+<body>
+<div class="writehead">
+    <div class= main_button>
+      <a href="{% url 'create' %}" >upload</a>
+      <a href="{% url 'home' %}">go to home</a>
+    </div>
+
+<div class="container">
+    <h1>L.POINT 이벤트 인증 PAGE</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" width="20%">날짜</th>
+            <th scope="col">제목</th>
+            <th scope="col" width="25%">글쓴이</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts.all %}
+        <tr>
+            <td>{{ post.pub_date }}</td>
+            <td>
+                <a href="{%url 'detail' post.pk %}">
+                {{ post.title|truncatechars:20}}
+                </a>
+            </td>
+            <td>{{ post.author }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
+
