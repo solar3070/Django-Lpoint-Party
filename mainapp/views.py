@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def home(request):
+def home(request): 
     return render(request, 'home.html')
 
 def eventIntro(request):
@@ -11,4 +11,4 @@ def event1(request):
     return render(request, 'event1.html')
 
 def event2(request):
-    return render(request, 'event2.html')
+    return render(request, 'event2.html') 
