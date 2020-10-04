@@ -18,7 +18,7 @@ def index(request):
 def post_create(request):
 
     if request.method == 'POST':
-        form=PostForm(request.POST,request.FILES) #POST는 글만 받아옴. FILES까지 받아와야지 media 올라감!!!!!!
+        form=PostForm(request.POST,request.FILES)
         if form.is_valid():
             post=form.save(commit=False)
             post.pub_date=timezone.now()
@@ -35,8 +35,7 @@ def post_detail(request, post_id):
 
 def post_update(request, post_id):
     post = get_object_or_404(Post, pk = post_id)
-    #해당하는 블로그 객체 번호에 맞는 입력공간
-    form = PostForm(request.POST, instance = post) #객체는 위에 있는 블로그 객체
+    form = PostForm(request.POST, instance = post)
     if form.is_valid():
         form.save()
         return redirect('index')
@@ -44,6 +43,7 @@ def post_update(request, post_id):
 
 
 def post_delete(request,post_id):
-    post=get_object_or_404(Post, pk=post_id) #기본키명이 pk
+    post=get_object_or_404(Post, pk=post_id)
     post.delete()
     return redirect('index')
+
