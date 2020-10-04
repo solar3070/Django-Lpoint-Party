@@ -18,18 +18,22 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col" width="20%">날짜</th>
-            <th scope="col">제목</th>
-            <th scope="col" width="25%">글쓴이</th>
+            <th scope="col" width="10%">NO.</th>
+            <th scope="col" width="15%">TYPE</th>
+            <th scope="col" width="25%">DATE</th>
+            <th scope="col" width="35%">TITLE</th>
+            <th scope="col" width="15%">AUTHOR</th>
         </tr>
     </thead>
     <tbody>
         {% for post in posts.all %}
         <tr>
-            <td>{{ post.pub_date }}</td>
+            <td>{{ post.id }}</td>
+            <td>{{ post.event_choice }}</td>
+            <td>{{ post.pub_date|date:"Y-m-d" }}</td>
             <td>
                 <a href="{%url 'detail' post.pk %}">
-                {{ post.title|truncatechars:20}}
+                {{ post.title|truncatechars:30}}
                 </a>
             </td>
             <td>{{ post.author }}</td>
@@ -41,4 +45,3 @@
 </div>
 </body>
 </html>
-
