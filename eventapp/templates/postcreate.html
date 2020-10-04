@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT_UPLOAD</title>
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            
+            <h2>L.POINT 이벤트 인증 참여하기</h2>
+            <p class="lead">하단의 폼에 맞추어 등록에 필요한 정보를 작성해 주세요.<br>L.POINT를 어떻게 이용하고 있는지 모두에게 알려주세요.</p>
+        </div>
+
+        <div class=input_form>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <table>
+                {{form.as_table}}
+                <hr>
+                <div class="blockgroup">
+                    <input type="submit" class="btn btn-info" value="제출하기">
+                    <input type="reset" class="btn btn-info" value="다시쓰기">
+                    <input type="button" class="btn btn-info" value="이전으로" onclick="history.back(1)">
+                </div>
+                </table>
+            </form>
+        </div>
+</body>
+</html>
+
+
+
+
+    
+ 
