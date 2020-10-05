@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -27,29 +30,32 @@
           font-size: 3.5rem;
         }
       }
+      body{
+        font-family: 'Cafe24Simplehae';
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
 
-      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" >
         <div>
           <h1 class="display-4">EVENT</h1>
-          <p class="lead my-3 font-italic">L.point에서 준비한 풍성하고 재밌는 이벤트 확인하고 참여하세요!</p>
+          <p class="lead my-3 font-italic"><span class="title">L.POINT</span>에서 준비한 풍성하고 재밌는 이벤트 확인하고 참여하세요!</p>
         </div>
       </div>
 
-      <div class="row mb-2">
+       <div class="row mb-2">
         <div class="col-md-6">
           <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
               <strong class="d-inline-block mb-2">EVENT 1</strong>
-              <h3 class="mb-0">인스타그램에 L.point 손 모양 올리고 포인트 받기</h3>
+              <h3 class="mb-0">인스타그램에 <span class="title">L.POINT</span> 손 모양 올리고 <br>포인트 받기</h3>
               <a href="{% url 'event1' %}" class="stretched-link">이벤트 내용 자세히 확인하기</a>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#a5b2bf"/><image href="{% static 'images/인스타.png' %}" width="200" height="250"></image></svg>
             </div>
           </div>
         </div>
@@ -57,15 +63,17 @@
           <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
               <strong class="d-inline-block mb-2">EVENT 2</strong>
-              <h3 class="mb-0">L.point 사용 인증하고 포인트 받기</h3>
+              <h3 class="mb-0"><span class="title">L.POINT</span> 사용 인증하고 포인트 받기</h3>
               <a href="{% url 'event2' %}" class="stretched-link">이벤트 내용 자세히 확인하기</a>
             </div>
             <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#a5b2bf"/><image href="{% static 'images/l.point.jpg' %}" width="200" height="250"></image></svg> 
             </div>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   </body>
 </html>
+{%endblock%}

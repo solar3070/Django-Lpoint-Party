@@ -1,47 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVENT_LIST</title>
+    <style>
+        div{
+            font-family: 'Cafe24Danjunghae';
+        }
+    </style>
 </head>
 <body>
-<div class="writehead">
-    <div class= main_button>
-      <a href="{% url 'create' %}" >upload</a>
-      <a href="{% url 'home' %}">go to home</a>
+    <div class="writehead">
+        <div class= main_button style="margin-left: 220px; margin-top: 30px;">
+        <a role="button" class="btn btn-outline-secondary"  href="{% url 'create' %}">UPLOAD</a>
+        </div>
+        <br>
+        <div class="container">
+            <h1>L.POINT 이벤트 인증 PAGE</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" width="10%">NO.</th>
+                        <th scope="col" width="15%">TYPE</th>
+                        <th scope="col" width="25%">DATE</th>
+                        <th scope="col" width="35%">TITLE</th>
+                        <th scope="col" width="15%">AUTHOR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts.all %}
+                    <tr>
+                        <td>{{ post.id }}</td>
+                        <td>{{ post.event_choice }}</td>
+                        <td>{{ post.pub_date|date:"Y-m-d" }}</td>
+                        <td>
+                            <a href="{%url 'detail' post.pk %}">
+                            {{ post.title|truncatechars:30}}
+                            </a>
+                        </td>
+                        <td>{{ post.author }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-
-<div class="container">
-    <h1>L.POINT 이벤트 인증 PAGE</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col" width="10%">NO.</th>
-            <th scope="col" width="15%">TYPE</th>
-            <th scope="col" width="25%">DATE</th>
-            <th scope="col" width="35%">TITLE</th>
-            <th scope="col" width="15%">AUTHOR</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for post in posts.all %}
-        <tr>
-            <td>{{ post.id }}</td>
-            <td>{{ post.event_choice }}</td>
-            <td>{{ post.pub_date|date:"Y-m-d" }}</td>
-            <td>
-                <a href="{%url 'detail' post.pk %}">
-                {{ post.title|truncatechars:30}}
-                </a>
-            </td>
-            <td>{{ post.author }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-</div>
-</div>
 </body>
 </html>
+{%endblock%}

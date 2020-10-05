@@ -1,9 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVENT_UPLOAD</title>
+    <style>
+        div{
+            font-family: 'Cafe24Simplehae';
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -19,20 +36,14 @@
                 <table>
                 {{form.as_table}}
                 <hr>
-                <div class="blockgroup">
+                </table>
+                <div class="button">
                     <input type="submit" class="btn btn-info" value="제출하기">
                     <input type="reset" class="btn btn-info" value="다시쓰기">
                     <input type="button" class="btn btn-info" value="이전으로" onclick="history.back(1)">
                 </div>
-                </table>
             </form>
         </div>
 </body>
 </html>
-
-
-
-
-
-    
- 
+{%endblock%}
