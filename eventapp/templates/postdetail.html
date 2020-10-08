@@ -7,35 +7,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EVENT LIST</title>
+  <style>
+      body{
+        text-align: center;
+        font-family: 'Cafe24Simplehae';
+      }
+      h6, h5{
+        color: gray;
+      }
+      .main_button{
+        margin-left : -600px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .head_write{
+        font-size: 20px;
+      }
+      .main{
+        text-align: left;
+        padding:30px;
+        margin-left : 400px;
+        margin-right: 400px;
+        border : 1px solid rgb(194, 193, 193);
+      }
+      .event-title{
+            color: gray;
+            font-family: 'Cafe24Simplehae';
+            margin-left: -500px;
+      }
+      .body{
+        margin-top: 20px;
+      }
+  </style>
 </head>
   
 <body>
-    <div class="writehead">
-          <div class= main_button>
-            <a href="{% url 'create' %}" >upload</a>
-            <a href="{% url 'home' %}">go to home</a>
-            <a href="{% url 'index' %}">go to event</a>
-          </div>
-    <div class="head_write">
-      <p>다른 사람들이 올린 손가락 인증샷을 확인할 수 있습니다. <br>
-        다양한 이들이 어떻게 L.POINT를 사용하고 있는지 확인해보세요!</p>
+    <div class="event-title">
+      <span class="gray">home > event > 인증게시판 > detail</span>
     </div>
-    <hr>     
+    
+      <div class="writehead">
+        <div class= main_button>
+          <a role="button" class="btn btn-outline-secondary"  href="{% url 'create' %}">글쓰기</a>
+          <a role="button" class="btn btn-outline-secondary" href="{% url 'index' %}">목록</a>
+        </div>
+        <div class="head_write">
+          <p>다른 사람들이 올린 손가락 인증샷을 확인할 수 있습니다. <br>
+            다양한 이들이 어떻게 <span class="title">L.POINT</span>를 사용하고 있는지 확인해보세요!</p>
+        </div>
+        <hr>     
+     </div>
     <main>
-        <h4>이벤트 종류 - {{ post.event_choice }}</h4>
-        <h3>제목 -  {{ post.title }}</h3>
+      <div class="main">
+        <p>{{ post.event_choice }}</p>
+        <h3>{{ post.title }}</h3>
+        <h5>작성자 : {{ post.author }}</h5> 
+        <h6>작성일시  {{ post.pub_date|date:"Y-m-d   h:i "}}</h6>
+        <hr>
         {% if post.photo %}
         <img src="{{ post.photo.url }}" height="300px">
         {% endif %}
-        <h6>작성일시 - {{ post.pub_date|date:"Y-m-d 일 / h-i-a"}}</h6>
         <!-- 로그인시 author 자동으로 나오게 수정예정 -->
-        <h4>작성자 - {{ post.author }}</h4>         
-        <p>내용 - {{ post.body }}</p>
+        <p class="body"> {{ post.body }}</p>
         </form>
-        <a href="{% url 'update' post.id%}" class="btn2 btn-outline-danger">수정</a>
-        <a href="{% url 'delete' post.id%}" class="btn2 btn-outline-danger">삭제</a>
-        <hr>
-    </div>   
+        <a role="button" class="btn btn-outline-danger" href="{% url 'update' post.id%}">수정</a>
+        <a role="button" class="btn btn-outline-danger" href="{% url 'delete' post.id%}">삭제</a>  
+      </div>
     </main>
     </body>
 </html>

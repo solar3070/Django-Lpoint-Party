@@ -15,7 +15,7 @@
         h1, h2{
             font-family: 'Cafe24Danjunghae';
         }
-        body{
+        .main{
             text-align: center;
         }
         .simple{
@@ -30,37 +30,46 @@
             margin-right: auto;
         }
         .event-title{
-            margin: 30px;
+            margin-left: 300px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .gray{
+            color: gray;
+            font-family: 'Cafe24Simplehae';
         }
     </style>
 </head>
 <body>
     <div class="event-title">
-    <h1><span class="simple">손가락 챌린지하면,</span><br> 포인트를 드려요!</h1>
+        <span class="gray">home > event > event1</span>
+        <h1><span class="simple">손가락 챌린지하면,</span> 포인트를 드려요!</h1>
     </div>
     <hr>
-    <h1>손가락 챌린지</h1>
-    <p>손가락으로 <span class="title">L</span>자 모양 만들어서 엘포인트 인증 이벤트 참여하고 포인트 적립 받자!</p>
+    <div class="main">
+        <h1>손가락 챌린지</h1>
+        <p>손가락으로 <span class="title">L</span>자 모양 만들어서 엘포인트 인증 이벤트 참여하고 포인트 적립 받자!</p>
 
-    <h2>참여 방법</h2>
-    <table>
-        <tr>
-            <td>1. 손가락으로 <span class="title">L</span>자 모양을 만들어주세요!</td>
-            <td> &nbsp; </td>
-            <td>2. 사진을 찍고 인스타에서 '<span class="title">L.POINT</span>' 해시태그를 달아주세요!</td>
-        </tr>
-        <tr>
-            <td><img id="finger" src="{% static 'images/finger.jpg' %}" width="300px"></td>
-            <td> &nbsp;  </td>
-            <td><img src="{% static 'images/인스타.png' %}" width="300px"></td>
-        </tr>
-    </table>
-   <br>
-    <p>3. 인증게시판에 캡쳐 사진을 올려주세요!</p>
-    <a role="button" class="btn btn-outline-primary" href="{% url 'create' %}">포인트 받으러 가기</a>
-    <a role="button" class="btn btn-outline-primary"  href="{% url 'index' %}">참여내역 보러가기</a>
-    <br><br>
-    <p>4. 참여 완료! 포인트 적립을 기다려주세요.</p>
+        <h2>참여 방법</h2>
+        <table>
+            <tr>
+                <td>1. 손가락으로 <span class="title">L</span>자 모양을 만들어주세요!</td>
+                <td> &nbsp; </td>
+                <td>2. 사진을 찍고 인스타에서 '<span class="title">L.POINT</span>' 해시태그를 달아주세요!</td>
+            </tr>
+            <tr>
+                <td><img id="finger" src="{% static 'images/finger.jpg' %}" width="300px"></td>
+                <td> &nbsp;  </td>
+                <td><img src="{% static 'images/인스타.png' %}" width="300px"></td>
+            </tr>
+        </table>
+        <br>
+        <p>3. 인증게시판에 캡쳐 사진을 올려주세요!</p>
+        <a role="button" class="btn btn-outline-primary" href="{% url 'create' %}">포인트 받으러 가기</a>
+        <a role="button" class="btn btn-outline-primary"  href="{% url 'index' %}">참여내역 보러가기</a>
+        <br><br>
+        <p>4. 참여 완료! 포인트 적립을 기다려주세요.</p>
+    </div>
 </body>
 </html>
 {%endblock%}
