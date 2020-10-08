@@ -1,1 +1,21 @@
-event2
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+        .event-title{
+            margin-left: 300px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .gray{
+            color: gray;
+            font-family: 'Cafe24Simplehae';
+        }
+    </style>
+</head>
+<div class="event-title">
+    <span class="gray">home > event > event2</span>
+    <h1><span class="simple">L.point 사용인증하고</span> 포인트 받아가세요!</h1>
+</div>
+{%endblock%}
