@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,12 +44,26 @@
           <a class="p-2 text-dark" href="{% url 'eventIntro' %}">EVENT</a>
           <a class="p-2 text-dark" href="{% url 'index' %}">인증 게시판</a>
         </nav>
-        <a class="btn btn-outline-primary" href="#">LOGIN</a>
+
+        <!-- 로그 -->
+        <div class="log">
+          {% providers_media_js %}
+          {% if user.is_authenticated %}
+          <a href="/accounts/logout">로그아웃</a>
+          {{user.username}} 님
+          {% else %}
+          <a href="/accounts/signup">회원가입</a> <br>
+          로그인이 필요합니다
+          <a class="btn btn-outline-primary" href="{% provider_login_url 'google' %}">GOOGLE LOGIN</a>
+          {% endif %} 
+        </div>
       </div>
 
-        {% block content %}
-        {% endblock %}
-        <hr class="mb-4">
+      {% block content %}
+      {% endblock %}
+      <hr class="mb-4">
+
+
    <footer class="my-3 pt-3 text-muted text-center text-small">
       <p class="mb-1">&copy; 2020 DONGDUK LIKELION </p>
       <ul class="list-inline">
