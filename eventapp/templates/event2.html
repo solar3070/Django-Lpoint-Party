@@ -16,6 +16,29 @@
 </head>
 <div class="event-title">
     <span class="gray">home > event > event2</span>
-    <h1><span class="simple">L.point 사용인증하고</span> 포인트 받아가세요!</h1>
+    <h1>L.point 사용인증하고 포인트 받아가세요!</h1>
+    <br>
+
+    <div class="main">
+        <h1>L.point 사용 인증 Event</h1>
+        <p>L.point 사용인증하고 추가 L.point 받자!</p>
+
+        <h2>참여 방법</h2>
+        <table>
+            <tr>
+                <td>1. L.point를 5회 사용한 후 사용내역을 캡처해주세요!</td>
+            </tr>
+            <tr>
+                <td><img id="finger" src="{% static 'images/usage.png' %}" width="300px"></td>
+            </tr>
+        </table>
+        <br>
+        <p>2. 인증게시판에 캡쳐 사진을 올려주세요!</p>
+        <a role="button" class="btn btn-outline-primary" href="{% url 'create' %}">포인트 받으러 가기</a>
+        <a role="button" class="btn btn-outline-primary"  href="{% url 'index' %}">참여내역 보러가기</a>
+        <br><br>
+        <p>3. 참여 완료! 포인트 적립을 기다려주세요.</p>
+    </div>
+
 </div>
 {%endblock%}
