@@ -13,7 +13,11 @@ def event2(request):
 
 def index(request):
     posts = Post.objects
-    return render(request,'postslist.html',{'posts':posts})
+    post_list = Post.objects.all()
+    paginator = Paginator(post_list, 5)
+    page = request.GET.get('page')
+    obj = paginator.get_page(page)
+    return render(request,'postslist.html',{'posts':posts, 'obj':obj})
 
 def post_create(request):
 
