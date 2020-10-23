@@ -12,21 +12,39 @@
             color: gray;
             font-family: 'Cafe24Simplehae';
         }
+        h1, h2{
+            font-family: 'Cafe24Danjunghae';
+        }
+        .main{
+            text-align: center;
+        }
+        .simple{
+            font-family: 'Cafe24Simplehae';
+        }
+        p,table{
+            font-size: 20px;
+            font-family: 'Cafe24Simplehae';
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
-<div class="event-title">
-    <span class="gray">home > event > event2</span>
-    <h1>L.point 사용인증하고 포인트 받아가세요!</h1>
-    <br>
-
+<body>
+    <div class="event-title">
+        <span class="gray">home > event > event2</span>
+        <h1><span class="title">L.point</span> 사용인증하고 포인트 받아가세요!</h1>
+    </div>
+    <hr>
     <div class="main">
-        <h1>L.point 사용 인증 Event</h1>
-        <p>L.point 사용인증하고 추가 L.point 받자!</p>
+        <h1><span class="title">L.point</span> 사용 인증 Event</h1>
+        <p><span class="title">L.point</span> 사용인증하고 추가 <span class="title">L.point</span> 받자!</p>
 
         <h2>참여 방법</h2>
         <table>
             <tr>
-                <td>1. L.point를 5회 사용한 후 사용내역을 캡처해주세요!</td>
+                <td>1. <span class="title">L.point</span>를 5회 사용한 후 사용내역을 캡처해주세요!</td>
             </tr>
             <tr>
                 <td><img id="finger" src="{% static 'images/usage.png' %}" width="300px"></td>
@@ -39,6 +57,5 @@
         <br><br>
         <p>3. 참여 완료! 포인트 적립을 기다려주세요.</p>
     </div>
-
-</div>
+</body>
 {%endblock%}
