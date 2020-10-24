@@ -11,7 +11,7 @@ def event1(request):
 def event2(request):
     return render(request, 'event2.html')
 
-def index(request):
+def list(request):
     posts = Post.objects
     post_list = Post.objects.all()
     paginator = Paginator(post_list, 5)

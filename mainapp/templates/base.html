@@ -42,7 +42,7 @@
         <nav class="my-2 my-md-0 mr-md-3">
           <a class="p-2 text-dark" href="{% url 'index' %}">HOME</a>
           <a class="p-2 text-dark" href="{% url 'eventIntro' %}">EVENT</a>
-          <a class="p-2 text-dark" href="{% url 'index' %}">인증 게시판</a>
+          <a class="p-2 text-dark" href="{% url 'list' %}">인증 게시판</a>
         </nav>
 
         <!-- 로그 -->
@@ -52,7 +52,7 @@
           <a href="/accounts/logout">로그아웃</a>
           {{user.username}} 님
           {% else %}
-          <a href="/accounts/signup">회원가입</a> <br>
+          <!-- <a href="/accounts/signup">회원가입</a> <br> -->
           로그인이 필요합니다
           <a class="btn btn-outline-primary" href="{% provider_login_url 'google' %}">GOOGLE LOGIN</a>
           {% endif %} 
