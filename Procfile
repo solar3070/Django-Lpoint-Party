@@ -1,1 +1,1 @@
-web: gunicorn likelion8_hackathon.wsgi --log-file -
+web: gunicorn hackathon_Lpoint.wsgi --log-file -
