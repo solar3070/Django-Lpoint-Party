@@ -27,7 +27,7 @@ def post_create(request):
             post=form.save(commit=False)
             post.pub_date=timezone.now()
             post.save()
-        return redirect('index')
+        return redirect('list')
 
     else:
         form = PostForm()
@@ -43,7 +43,7 @@ def post_update(request, post_id):
         form = PostForm(request.POST, instance = post)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('list')
     else:
         form = PostForm(instance = post)
         return render(request, 'postupdate.html', {'form':form})
