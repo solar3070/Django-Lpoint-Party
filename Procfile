@@ -1,0 +1,1 @@
+web: gunicorn likelion8_hackathon.wsgi --log-file -
