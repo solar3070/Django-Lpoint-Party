@@ -39,6 +39,7 @@ def post_detail(request, post_id):
 
 def post_update(request, post_id):
     post = get_object_or_404(Post, pk = post_id)
+<<<<<<< HEAD
     if request.method == 'POST':
         form = PostForm(request.POST, instance = post)
         if form.is_valid():
@@ -47,10 +48,17 @@ def post_update(request, post_id):
     else:
         form = PostForm(instance = post)
         return render(request, 'postupdate.html', {'form':form})
+=======
+    form = PostForm(request.POST, instance = post)
+    if form.is_valid():
+        form.save()
+        return redirect('list')
+    return render(request, 'postupdate.html', {'form':form})
+>>>>>>> 7c84c04661d68eeb15f315a2bf88d33223ffc523
 
 
 def post_delete(request,post_id):
     post=get_object_or_404(Post, pk=post_id)
     post.delete()
-    return redirect('index')
+    return redirect('list')
 
